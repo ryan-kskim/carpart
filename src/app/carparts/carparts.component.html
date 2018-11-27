@@ -1,10 +1,28 @@
-<p>There are {{totalCarParts()}} total parts in stock.</p>
+<h3>There are {{totalCarParts()}} total parts in stock.</h3>
 <ul>
-  <li *ngFor="let carPart of carParts">
-    <h2>{{carPart.name}}</h2>
-    <p>{{carPart.description}}</p>
-    <p>{{carPart.price | currency:'USD':false}}</p> <!-- 'USD' 묵시적으로 기본값, 'KRW' 원화, false 하면 화폐 단위가 아닌 약어가 나옮 -->
-    <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock</p>
-    <p *ngIf="carPart.inStock === 0">Out of Stock</p>
+  <li class="card" *ngFor="let carPart of carParts">
+    <div class="panel-body">
+      <div class="photo">
+        <img [src]="carPart.image">
+      </div>
+      <table class="product-info">
+        <tr>
+          <td>
+            <h2>{{carPart.name | uppercase}}</h2>
+            <p class="description">{{carPart.description}}</p>
+            <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock</p>
+            <p *ngIf="carPart.inStock === 0">Out of Stock</p>
+          </td>
+          <td class="price">{{carPart.price | currency:'EUR':true}}</td> <!-- '4.2-2' => 0,000.00 -->
+          <td>
+            <div class="select-quantity">
+              <button class="decrease" >-</button>
+              <input class="number" type="text" value="{{carPart.quantity}}">
+              <button class="increase" >+</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
   </li>
 </ul>
