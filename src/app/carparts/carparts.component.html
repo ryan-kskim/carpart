@@ -1,0 +1,10 @@
+<p>There are {{totalCarParts()}} total parts in stock.</p>
+<ul>
+  <li *ngFor="let carPart of carParts">
+    <h2>{{carPart.name}}</h2>
+    <p>{{carPart.description}}</p>
+    <p>{{carPart.price | currency:'USD':false}}</p> <!-- 'USD' 묵시적으로 기본값, 'KRW' 원화, false 하면 화폐 단위가 아닌 약어가 나옮 -->
+    <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock</p>
+    <p *ngIf="carPart.inStock === 0">Out of Stock</p>
+  </li>
+</ul>
