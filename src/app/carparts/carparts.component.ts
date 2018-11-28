@@ -11,13 +11,35 @@ export class CarpartsComponent implements OnInit {
 
   carParts: CarPart[];
 
-  constructor() { }
+  constructor() {
+    console.log('CarpartsComponent constructor called..');
+  }
 
   ngOnInit() {
+    console.log('CarpartsComponent ngOnInt called..');
     this.carParts = CARPARTS;
   }
 
   totalCarParts() {
     return this.carParts.reduce((prev, curr) => prev + curr.inStock, 0); // 0은 초기값
+  }
+
+  upQuantity(carPart) {
+    if (carPart.quantity < carPart.inStock) {
+      carPart.quantity++;
+    }
+  }
+
+  downQuantity(carPart) {
+    if (carPart.quantity !== 0) {
+      carPart.quantity--;
+    }
+  }
+
+  keyupQuantity(carPart, event) {
+    console.log('value : ' + event.target.value);
+    if (event.target.value <= carPart.inStock) {
+      carPart.quantity = event.target.value;
+    }
   }
 }

@@ -1,9 +1,14 @@
 <h3>There are {{totalCarParts()}} total parts in stock.</h3>
 <ul>
-  <li class="card" *ngFor="let carPart of carParts">
+  <!--
+    css class binding....
+    초기 [class.featured]="carPart.featured"
+    버전 업데이트 [ngClass]="{'featured': carPart.featured}"
+  -->
+  <li class="card" *ngFor="let carPart of carParts" [ngClass]="{'featured': carPart.featured}">
     <div class="panel-body">
       <div class="photo">
-        <img [src]="carPart.image">
+        <img [src]="carPart.image" [alt]="carPart.description">
       </div>
       <table class="product-info">
         <tr>
@@ -16,9 +21,10 @@
           <td class="price">{{carPart.price | currency:'EUR':true}}</td> <!-- '4.2-2' => 0,000.00 -->
           <td>
             <div class="select-quantity">
-              <button class="decrease" >-</button>
-              <input class="number" type="text" value="{{carPart.quantity}}">
-              <button class="increase" >+</button>
+              {{carPart.quantity}}
+              <button class="decrease" (click)="downQuantity(carPart)">-</button>
+              <input class="number" type="number" [value]="carPart.quantity" (keyup)="keyupQuantity(carPart,$event)">
+              <button class="increase" (click)="upQuantity(carPart)">+</button>
             </div>
           </td>
         </tr>

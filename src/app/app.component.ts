@@ -17,4 +17,8 @@ export class AppComponent {
     'description': 'These tires are the very bet',
     'inStock': 5
   };
+
+  constructor() {
+    console.log('AppComponent constructor called..');
+  }
 }
