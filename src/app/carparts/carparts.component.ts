@@ -19,11 +19,15 @@ export class CarpartsComponent implements OnInit {
   ngOnInit() {
     console.log('CarpartsComponent ngOnInt called..');
     // CARPARTS를 서비스에서 호출, carparts.component -> carparts-data.service -> mocks
-    this.carParts = this.carpartsDataService.getCarParts();
+    // 예전 방식 - this.carParts = this.carpartsDataService.getCarParts();
+    // resData는 json 전체 데이터를 받아옮.
+    this.carpartsDataService.getCarParts().subscribe(resData => this.carParts = resData['data']);
   }
 
   totalCarParts() {
-    return this.carParts.reduce((prev, curr) => prev + curr.inStock, 0); // 0은 초기값
+    if (Array.isArray(this.carParts)) { // reduce는 array 함수이므로 Type체크를 해야 함.
+      return this.carParts.reduce((prev, curr) => prev + curr.inStock, 0); // 0은 초기값
+    }
   }
 
   upQuantity(carPart) {
