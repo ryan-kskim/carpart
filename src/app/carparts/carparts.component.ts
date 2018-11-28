@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CarPart} from './car-part';
-import {CARPARTS} from './mocks';
+//import {CARPARTS} from './mocks';
+import {CarpartsDataService} from './carparts-data.service';
 
 @Component({
   selector: 'app-carparts',
@@ -11,13 +12,14 @@ export class CarpartsComponent implements OnInit {
 
   carParts: CarPart[];
 
-  constructor() {
+  constructor(private carpartsDataService: CarpartsDataService) {
     console.log('CarpartsComponent constructor called..');
   }
 
   ngOnInit() {
     console.log('CarpartsComponent ngOnInt called..');
-    this.carParts = CARPARTS;
+    // CARPARTS를 서비스에서 호출, carparts.component -> carparts-data.service -> mocks
+    this.carParts = this.carpartsDataService.getCarParts();
   }
 
   totalCarParts() {

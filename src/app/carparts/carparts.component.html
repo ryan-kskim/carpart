@@ -23,7 +23,20 @@
             <div class="select-quantity">
               {{carPart.quantity}}
               <button class="decrease" (click)="downQuantity(carPart)">-</button>
-              <input class="number" type="number" [value]="carPart.quantity" (keyup)="keyupQuantity(carPart,$event)">
+              <!--
+                Two way binding : propert binding + event binding
+                <input class="number" type="number" [value]="carPart.quantity" (keyup)="keyupQuantity(carPart,$event)">
+              -->
+              <!--
+                Two way binding : FormsModule 임포트, ngModel 사용
+
+                양방향 바인딩이란 property binding과 event binding의 조합을 말하며,
+                Javascript 컴포넌트 내에서의 property가 변경되거나 HTML 페이지 내의 값이 변경되면 즉시 동기화 됨을 의미한다.
+
+                AngularJS는 양방향만 지원하여 느림.
+                Angular는 필요할 때만 사용.
+              -->
+              <input class="number" type="number" [(ngModel)]="carPart.quantity">
               <button class="increase" (click)="upQuantity(carPart)">+</button>
             </div>
           </td>
