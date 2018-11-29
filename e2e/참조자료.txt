@@ -2,7 +2,6 @@
 
 
 Angular style gude
-
 https://angular.io/guide/styleguide
 
 
@@ -13,33 +12,31 @@ https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
 
 
 ES6 Promise 객체
-
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 
 
 RxJS Observable 객체
-
 http://xgrommx.github.io/rx-book/index.html
 
 
 <link rel="stylesheet"
-
 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 google search angular 6 new features
-
 https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4
 
 
 Observer Pattern
-
 http://www.jidum.com/jidums/view.do?jidumId=1006
 
 
 [출처] Angular with Typescript|작성자 vega2k
+
+
+
+SPA(Single Page Application)
+https://poiemaweb.com/js-spa
