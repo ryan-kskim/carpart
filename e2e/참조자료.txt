@@ -36,6 +36,8 @@ http://www.jidum.com/jidums/view.do?jidumId=1006
 
 [출처] Angular with Typescript|작성자 vega2k
 
+강사님 github
+https://github.com/vega2k
 
 
 SPA(Single Page Application)
@@ -51,3 +53,7 @@ https://poiemaweb.com/js-spa
 - Vuejs : star:120,696, developer:216
  : Angular + React
  : Vue Native
+
+
+Forms
+server>npm install --save cors
