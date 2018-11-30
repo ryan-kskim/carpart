@@ -4,9 +4,10 @@ import {Observable} from 'rxjs';
 import {CarRace} from './car-race';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(/*{
+  // carparts.module.ts 에 등록해서 이 부분 주석처리. carparts 에서만 사용 가능
+  providedIn: 'root' // root module에 등록하겠다. ES6 부터 적용
+}*/)
 export class CarRaceService {
 
   constructor(private httpClient: HttpClient) {

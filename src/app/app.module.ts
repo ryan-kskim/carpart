@@ -5,18 +5,16 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CarpartsComponent} from './carparts/carparts.component';
 import {AboutComponent} from './about/about.component';
-import {CarRacesComponent} from './car-race/car-race.component';
 import {SharedModule} from './shared/shared.module';
+import {CarpartsModule} from './carparts/carparts.module';
+import {CarRaceModule} from './car-race/car-race.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarpartsComponent,
-    AboutComponent,
-    CarRacesComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +22,9 @@ import {SharedModule} from './shared/shared.module';
     HttpClientModule,
     // 사용자가 추가한 거
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    CarpartsModule,
+    CarRaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

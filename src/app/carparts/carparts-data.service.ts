@@ -7,9 +7,10 @@ import {CarPart} from './car-part';
 // Data Service 사용을 위해서는 @Injectable 데코레이터를 반드시 추가
 // https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4
 //  => Tree Shakable Providers
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable(/*{
+  // carparts.module.ts 에 등록해서 이 부분 주석처리. carparts 에서만 사용 가능
+  providedIn: 'root' // root module에 등록하겠다. ES6 부터 적용
+}*/)
 export class CarpartsDataService {
 
   constructor(private httpClient: HttpClient) {
