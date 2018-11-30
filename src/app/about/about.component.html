@@ -4,4 +4,11 @@
     <p myTextDecorator="line-through underline overline">Races are usually pretty awesome, schedule to race today</p>
     <h3>{{today | date:'fullDate'}}</h3>
   </header>
+  <div>
+    <ul>
+      <li *ngFor="let num of numbers">
+        {{ num | ordinal }}
+      </li>
+    </ul>
+  </div>
 </div>
