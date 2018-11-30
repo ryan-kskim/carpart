@@ -40,3 +40,14 @@ http://www.jidum.com/jidums/view.do?jidumId=1006
 
 SPA(Single Page Application)
 https://poiemaweb.com/js-spa
+
+
+- Angular (google) : star:43,100, developer:783, - One framework. Mobile & desktop. - CLI
+ : Ionic
+
+- React (Facebook) : star:116,691, developer:1,267, - A JavaScript library for building user interfaces - Babel
+ : React Native
+
+- Vuejs : star:120,696, developer:216
+ : Angular + React
+ : Vue Native

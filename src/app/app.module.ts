@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {CarpartsComponent} from './carparts/carparts.component';
 import {AboutComponent} from './about/about.component';
 import {CarRacesComponent} from './car-race/car-race.component';
+import {SharedModule} from './shared/shared.module';
 
 
 @NgModule({
@@ -19,9 +20,11 @@ import {CarRacesComponent} from './car-race/car-race.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // 사용자가 추가한 거
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
